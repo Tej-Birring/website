@@ -23,5 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-# Semi-private JSON config files that don't need to be included in VCS
+# Semi-private JSON app config files that don't need to be included in VCS
 _*.json
+.*.json
+
+# Dev config files
+.firebaserc
