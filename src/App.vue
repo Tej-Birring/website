@@ -56,14 +56,14 @@ function toggleMenuMob() {
       <div class="sideBarMob h-screen lg:hidden hidden fixed" ref="sideBarMob">
         <c-menu :title="siteTitle" :items="menuItems" @menu-item-clicked="toggleMenuMob"/>
         <div class="text-xs">
-          <a href="#" target="_blank" rel="noreferrer noopener">Client</a> written<br /> using <a href="https://vuejs.org/" target="_blank" rel="noreferrer noopener">Vue 3.</a><br/><br/>
+          <a href="https://github.com/Tej-Birring/website" target="_blank" rel="noreferrer noopener">Client</a> written<br /> using <a href="https://vuejs.org/" target="_blank" rel="noreferrer noopener">Vue 3.</a><br/><br/>
           <a href="https://www.notion.so/" target="_blank" rel="noreferrer noopener">Notion</a> as CMS<br /> via <a href="https://github.com/Tej-Birring/NotionRelayServerless" target="_blank" rel="noreferrer noopener">proxy.</a><br/>
         </div>
       </div>
       <div class="sideBar h-screen w-xs <lg:hidden flex flex-grow-0 flex-shrink-0">
         <c-menu :title="siteTitle" :items="menuItems"/>
         <div class="text-xs">
-          <a href="#" target="_blank" rel="noreferrer noopener">Client</a> written using <a href="https://vuejs.org/" target="_blank" rel="noreferrer noopener">Vue 3.</a><br/>
+          <a href="https://github.com/Tej-Birring/website" target="_blank" rel="noreferrer noopener">Client</a> written using <a href="https://vuejs.org/" target="_blank" rel="noreferrer noopener">Vue 3.</a><br/>
           <a href="https://www.notion.so/" target="_blank" rel="noreferrer noopener">Notion</a> as CMS via <a href="https://github.com/Tej-Birring/NotionRelayServerless" target="_blank" rel="noreferrer noopener">proxy.</a><br/>
         </div>
       </div>
