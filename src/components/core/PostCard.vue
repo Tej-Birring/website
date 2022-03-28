@@ -1,9 +1,8 @@
 <template>
   <div class="blog-post"
        v-animate:fadeInTop.inView="{delay: (idx+1)*200}" :class="getRowSpanClassForBlogPost(post)"
-      v-show="!hidden"
-    >
-    <c-image v-if="post.featureImg" :data="post.featureImg" alt="Post feature image." class="mb-10" @imgReady="setImgLoaded" />
+    > <!-- v-show="!hidden" -->
+    <c-image v-if="post.featureImg" :data="post.featureImg" alt="Post feature image." class="mb-10" v-animate:accordion /> <!-- @imgReady="setImgLoaded" -->
     <div class="topic mb-4" v-if="post.topic">{{post.topic?.name}}</div>
     <h2 class="mb-6"><router-link :to="post.readRoute">{{post.title}}</router-link></h2>
     <p class="mb-8 flex flex-row justify-start items-center" v-if="post.published">
