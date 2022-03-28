@@ -29,3 +29,4 @@ _*.json
 
 # Dev config files
 .firebaserc
+firebase.json

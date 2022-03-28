@@ -1,0 +1,36 @@
+{
+  "name": "tej_birring_website",
+  "author": {
+    "name": "Tej Birring",
+    "email": "tej.birring@gmail.com"
+  },
+  "description": "Code for my personal website (client-side SPA) written using Vue 3. Uses Notion as CMS via proxy. Proxy (serverless function, in different repository) is used to bypass browser-enforced CORS headers received from Notion access point.",
+  "repository": {
+    "url": "https://github.com/Tej-Birring/website"
+  },
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "buffer": "^6.0.3",
+    "dayjs": "^1.11.0",
+    "firebase": "^9.6.7",
+    "gsap": "^3.9.1",
+    "vue": "^3.2.25",
+    "vue-cool-lightbox": "^2.7.4",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "npm": "^8.5.2",
+    "path": "^0.12.7",
+    "vite": "^2.8.0",
+    "vite-plugin-windicss": "^1.8.1",
+    "windicss": "^3.5.0"
+  }
+}

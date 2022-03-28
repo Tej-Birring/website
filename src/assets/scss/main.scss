@@ -1,0 +1,172 @@
+// fonts from Google
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// foundation
+html {
+    background-color: $clrJet;
+    color: $clrGray;
+
+    font-size: 12px;
+    @screen sm {
+        font-size: 16px;
+    }
+
+    body, p {
+        font-family: $font-Mulish;
+        font-weight: 400;
+        letter-spacing: 0.06rem;
+        line-height: 1.44;
+        word-wrap: break-word;
+    }
+
+    strong {
+        font-weight: 800;
+    }
+
+    blockquote {
+        font-size: 1.25rem;
+        font-style: italic;
+        height: auto;
+        padding-left: 70px;
+        border-left: solid 1rem $clrGray;
+        &::before {
+            content: "\“";
+            line-height: 1;
+            font-size: 1.89rem;
+        }
+        &::after {
+            content: "\”";
+            line-height: 1;
+            font-size: 1.89rem;
+        }
+        @media (max-width: 1024px) {
+            padding-left: 0;
+            border-left: 0;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font-Montserrat;
+        line-height: 1.4;
+        color: $clrWhite;
+        //margin-bottom: 1rem;
+        padding: 0;
+        font-weight: 800;
+    }
+    h1 {
+        font-size: 2.33rem;
+    }
+    h2 {
+        font-size: 1.70rem;
+    }
+    h3 {
+        font-size: 1.17rem;
+    }
+    h4 {
+        font-size: 0.89rem;
+    }
+    h5 {
+        font-size: 0.67rem;
+    }
+    h6 {
+        font-size: 0.55rem;
+    }
+
+    a {
+        color: $clrWhite;
+        @include smooth-animation(0.3s);
+        &:hover {
+            color: $clrSage;
+        }
+    }
+
+    hr {
+        margin-top: 1.55rem;
+        margin-bottom: 1.55rem;
+    }
+}
+
+* {
+     //override default margin
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    @include no-select-drag();
+}
+
+
+
+
+
+button {
+    text-decoration: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.14rem;
+    padding: 1.188rem 2.5rem;
+    background-color: $clrWhite;
+    color: $clrJet;
+
+    font-size: 0.938rem;
+    line-height: 1;
+    height: 3.4rem;
+    outline: hidden;
+
+    border: none;
+    cursor: pointer;
+
+    @include smooth-animation(0.3s);
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: #77785F;
+        color: $clrWhite;
+    }
+}
+
+
+
+
+.htmlContent {
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 2rem;
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    //background: $clrDavysGray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $clrSonicSilver;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:active {
+    background: $clrSonicSilver;
+    border: 1px solid $clrJet;
+}
