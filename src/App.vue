@@ -34,10 +34,39 @@ function toggleMenuMob() {
   const isActive = hamburger.value.classList.contains("is-active");
   if (isActive) {
     hamburger.value.classList.remove("is-active");
-    sideBarMob.value.classList.add("hidden");
+    // hide mobile menu
+    sideBarMob.value.animate([
+      {
+        opacity: 0,
+        transform: "translateX(-18rem)"
+      },
+      {
+        opacity: 1,
+        transform: "translateX(0)"
+      }
+    ], {
+      duration: 610,
+      easing: "ease-in",
+      fill: "forwards",
+      direction: "reverse"
+    })
   } else {
-    sideBarMob.value.classList.remove("hidden");
     hamburger.value.classList.add("is-active");
+    // show mobile menu
+    sideBarMob.value.animate([
+      {
+        opacity: 0,
+        transform: "translateX(-18rem)"
+      },
+      {
+        opacity: 1,
+        transform: "translateX(0)"
+      }
+    ], {
+      duration: 610,
+      easing: "ease-in",
+      fill: "forwards"
+    })
   }
 }
 </script>
@@ -53,7 +82,7 @@ function toggleMenuMob() {
       </div>
     </div>
     <div class="w-full flex flex-row flex-nowrap">
-      <div class="sideBarMob h-screen lg:hidden hidden fixed" ref="sideBarMob">
+      <div class="sideBarMob h-screen hidden fixed" ref="sideBarMob">
         <c-menu :title="siteTitle" :items="menuItems" @menu-item-clicked="toggleMenuMob"/>
         <div class="text-xs">
           <a href="https://github.com/Tej-Birring/website" target="_blank" rel="noreferrer noopener">Client</a> written<br /> using <a href="https://vuejs.org/" target="_blank" rel="noreferrer noopener">Vue 3.</a><br/><br/>
@@ -107,35 +136,10 @@ function toggleMenuMob() {
     width: 18rem;
     background-color: $clrDavysGray;
     z-index: 99;
-    @media (min-width: 1024px) {
+    transform: translateX(-18rem);
+    @screen lg {
       display: none;
     }
-    animation: kf-slideforward 610ms ease-out;
-    animation-fill-mode: forwards;
-    &.hidden{
-      animation: kf-slideback 610ms ease-in;
-      animation-fill-mode: forwards;
-    }
-  }
-}
-
-@keyframes  kf-slideback {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-18rem);
-  }
-}
-
-@keyframes kf-slideforward {
-  0% {
-    opacity: 0;
-    transform: translateX(-18rem);
-  }
-  100% {
-    opacity: 1;
   }
 }
 
