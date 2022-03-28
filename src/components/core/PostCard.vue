@@ -12,7 +12,7 @@
     <c-notion-rich-text :data="post.short" v-if="post.short" />
     <!--      <div class="h-full flex-grow"></div>-->
     <button class="ml-auto mt-10" @click.prevent.stop="navigateToPost(post)">
-      <ion-icon name="rocket" class="mr-2 text-lg" />
+      <!-- <ion-icon name="rocket" class="mr-2 text-lg" /> -->
       Read more
     </button>
     <hr v-if="post.tags.length>0" class="tag-hr"/>
