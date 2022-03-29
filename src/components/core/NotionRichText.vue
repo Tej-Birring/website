@@ -28,6 +28,7 @@ export default {
 
       data.forEach((textEntry)=>{
         const textContent = textEntry.text.content;
+        const textLink = textEntry.text.link?.url;
         const textStyle = textEntry.annotations;
         // apply style
         let _ret = textContent;
@@ -39,6 +40,11 @@ export default {
           _ret = h("u", {class:'underline'}, _ret);
         if (textStyle.strikethrough)
           _ret = h("u", {class:'line-through'}, _ret);
+        if (textLink)
+          _ret = h("a",
+              {
+                href: textLink
+              } ,_ret);
         // add custom classes
         // _ret.props.class = "text-center";
         // return
@@ -49,7 +55,8 @@ export default {
 
     return () => h(props.elTag,
         {
-          class: props.class
+          class: props.class,
+          style: {whiteSpace: "pre-wrap"}
         },
       mapRichTextComponents(props.data)
     );
