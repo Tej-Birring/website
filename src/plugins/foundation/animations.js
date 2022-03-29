@@ -6,7 +6,7 @@ const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(
             (entry)=>{
-                console.log(entry.isIntersecting)
+                // console.debug(entry.isIntersecting)
                 if (entry.intersectionRatio > 0) {
                     const el = entry.target;
                     // get configs to print
