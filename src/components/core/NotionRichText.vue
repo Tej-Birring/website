@@ -17,11 +17,6 @@ export default {
     }
   },
   setup(props) {
-
-    // const props = defineProps({
-    //
-    // });
-
     function mapRichTextComponents(data) {
       const ret = [];
       if (!Array.isArray(data)) return ret;
@@ -45,9 +40,7 @@ export default {
               {
                 href: textLink
               } ,_ret);
-        // add custom classes
-        // _ret.props.class = "text-center";
-        // return
+
         ret.push(_ret);
       });
       return ret;

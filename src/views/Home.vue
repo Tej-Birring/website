@@ -44,9 +44,10 @@ $notion.getDatabase("051c0d2a4e9348c68ccfea27ed4f7a90")
       social.value = res?.results.map((page)=>{
         return {
           href: page.properties?.URL?.url,
-          ionicon: page.properties?.Icon?.rich_text[0]?.plain_text
+          ionicon: page.properties?.Icon?.rich_text[0]?.plain_text,
+          show: page.properties?.Show?.checkbox
         }
-      });
+      }).filter(el => el.show === true)
     })
 
 

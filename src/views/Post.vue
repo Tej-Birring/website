@@ -19,7 +19,7 @@
   </h2>
   <p class="date mb-21 flex flex-row justify-center items-center" v-if="post?.published" v-animate:fadeIn>
     <ion-icon name="calendar" class="mr-2" />
-    <span class="italic">{{$utils.dateObjToDateString(post.published.day)}}</span>
+    <span class="italic">{{$utils.dateObjToDateString(post.published)}}</span>
   </p>
 
   <div class="post-content">

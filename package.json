@@ -2,7 +2,7 @@
   "name": "tej_birring_website",
   "author": {
     "name": "Tej Birring",
-    "email": "tej.birring@gmail.com"
+    "email": "tejbirring@gmail.com"
   },
   "description": "Code for my personal website (client-side SPA) written using Vue 3. Uses Notion as CMS via proxy. Proxy (serverless function, in different repository) is used to bypass browser-enforced CORS headers received from Notion access point.",
   "repository": {

@@ -7,6 +7,7 @@
     <CNotionRichText :data="data.quote.rich_text" v-else-if="data.type==='quote'" elTag="blockquote" :class="`${classes} my-8 notion-block`" />
     <hr v-else-if="data.type==='divider'" :class="classes" />
     <CNotionImage v-else-if="data.type==='image'" :class="`${classes} notion-block`" :data="data" />
+    <CNotionList v-else-if="data.type==='bulleted_list_item'" class="`${classes} notion-block`" :data="data.bulleted_list_item" />
 <!--  </div>-->
 </template>
 
@@ -14,6 +15,7 @@
   import { defineProps, ref, computed } from "vue";
   import CNotionRichText from "./NotionRichText.vue";
   import CNotionImage from "./NotionImage.vue";
+  import CNotionList from "./NotionList.vue";
 
   const props = defineProps({
     data: Object,
@@ -21,6 +23,7 @@
   });
 
   const classes = ref(props.class);
+  console.log(props.data)
 </script>
 
 <style scoped lang="scss">

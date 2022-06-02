@@ -41,7 +41,6 @@ const getDatabase = (databaseId, sortsArr, filterObj, maxPages=100, startAtId=un
         .catch((error)=>reject(handleError(error)));
 });
 
-
 export default {
     install(app, options) {
         app.provide("$notion", {

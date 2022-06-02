@@ -5,6 +5,7 @@ import CDetails from "/@/components/core/Details.vue";
 import CNotionRichText from "/@/components/core/NotionRichText.vue";
 import CNotionBlock from "/@/components/core/NotionBlock.vue";
 import CNotionImage from "/@/components/core/NotionImage.vue";
+import CNotionList from "/@/components/core/NotionList.vue";
 import CBackgroundImage from "/@/components/core/BackgroundImage.vue";
 import CImage from "/@/components/core/Image.vue";
 import CPostCard from "/@/components/core/PostCard.vue";
@@ -20,6 +21,7 @@ export default {
         app.component("c-background-image", CBackgroundImage);
         app.component("c-image", CImage);
         app.component("c-notion-image", CNotionImage);
+        app.component("c-notion-list", CNotionList);
         app.component("c-post", CPostCard);
     }
 }

@@ -3,19 +3,19 @@
         <h1>Posts</h1>
       </div>
 <!--  {{blogPosts}}-->
-  <div class="blog-posts-grid gap-8 xl:gap-10">
-    <c-post v-for="(post, idx) in blogPosts" :key="`post-${idx}`" :post="post" :idx="idx"/>
+  <div class="masonry-with-flex">
+    <c-post v-for="(post, idx) in blogPosts" :key="`post-${idx}`" :post="post" :idx="idx" />
   </div>
-  <div class="flex flex-row justify-center items-center mt-21">
-    <button v-if="moreBlogPostsAvailable && !$utils.loading.value" @click.prevent.stop="getData" v-animate:fadeIn>Load more...</button>
-    <p v-else-if="blogPosts.length>0 && !$utils.loading.value" class="clr-muted" v-animate:fadeInTop.vvLong>No more posts.</p>
-    <p v-else-if="blogPosts.length===0 && !$utils.loading.value" class="clr-muted" v-animate:fadeInTop.vvLong>No posts to display.</p>
-  </div>
+<!--  <div class="flex flex-row justify-center items-center mt-21">-->
+<!--    <button v-if="moreBlogPostsAvailable && !$utils.loading.value" @click.prevent.stop="getData" v-animate:fadeIn>Load more...</button>-->
+<!--    <p v-else-if="blogPosts.length>0 && !$utils.loading.value" class="clr-muted" v-animate:fadeInTop.vvLong>No more posts.</p>-->
+<!--    <p v-else-if="blogPosts.length===0 && !$utils.loading.value" class="clr-muted" v-animate:fadeInTop.vvLong>No posts to display.</p>-->
+<!--  </div>-->
 
 </template>
 
 <script setup>
-import {inject, ref} from "vue";
+import {inject, onMounted, ref} from "vue";
 
 const $utils = inject("$utils");
 const $notion = inject("$notion");
@@ -59,20 +59,23 @@ function getData() {
         $utils.loading.value = false;
       });
 }
-
-getData();
+getData()
 </script>
 
 <style scoped lang="scss">
-  .blog-posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 1fr);
-    @screen lg {
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-      place-items: center stretch;
-    }
-    grid-auto-flow: row;
+.masonry-with-flex {
+  @screen lg {
+    column-count: 2;
+    column-gap: 1em;
   }
 
+
+
+  * {
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+  }
+}
 
 </style>
