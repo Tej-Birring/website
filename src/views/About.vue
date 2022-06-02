@@ -65,7 +65,7 @@
     <div class="grid grid-cols-3 gap-6 overflow-hidden">
 
       <div class="col-span-3 xl:col-span-2 xl:row-span-full">
-        <c-notion-block v-for="(item, idx) in content?.blocks" :key="idx" :data="item" class="<lg:text-center aboutText" v-animate:fadeInBottom.long.inView="{delay:idx*50}" />
+        <c-notion-block v-for="(item, idx) in content?.blocks" :key="idx" :data="item" class="<lg:text-center about-text" v-animate:fadeInBottom.long.inView="{delay:idx*50}" />
       </div>
 
       <div class="row-span-1 col-span-3 xl:col-span-1 -order-1" v-animate:fadeInTop.long="{delay:1500}">
@@ -87,12 +87,9 @@
 
 
 <style scoped lang="scss">
-  .aboutText {
-    max-width: 610px;
-    @screen lg {
-      * {
-
-      }
+  .about-text {
+    @screen xl {
+      max-width: 700px;
     }
   }
 </style>
